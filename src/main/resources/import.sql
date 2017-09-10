@@ -1,0 +1,10 @@
+insert into skills (id, difficulty, name) values (1000,1, "command");
+insert into skills (id, difficulty, name) values (1001,2, "fight");
+insert into actors (id, name, class_name) values (1002,"test class", "commander");
+insert into actors (id, name, class_name) values (1003,"test class2", "bishop");
+insert into actors (id, name, class_name) values (1004,"test class3", "soldier");
+insert into actors (id, name, class_name) values (1005,"test class3", "dummy");
+insert into skills_allowed_actors (allowed_skills_id, allowed_actors_id) values (1000, 1002);
+insert into skills_allowed_actors (allowed_skills_id, allowed_actors_id) values (1000, 1003);
+insert into skills_allowed_actors (allowed_skills_id, allowed_actors_id) values (1001, 1002);
+insert into skills_allowed_actors (allowed_skills_id, allowed_actors_id) values (1001, 1004);
