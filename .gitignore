@@ -1,5 +1,16 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
 # Compiled class file
 *.class
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
 
 # Log file
 *.log
