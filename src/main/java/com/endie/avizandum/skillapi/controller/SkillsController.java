@@ -22,7 +22,7 @@ public class SkillsController {
 	@Autowired
 	ActorRepository actorRepository;
 
-	@RequestMapping(value="/skills", method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public List<Skill> getAllSkills(){
 		
 		List<Skill> skills = skillRepository.findAll();
@@ -30,7 +30,7 @@ public class SkillsController {
 		return skills;
 	}
 
-	@RequestMapping(value="/skills/actor/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/actor/{id}", method = RequestMethod.GET)
 	public List<Skill> getAllSkillsByActor(@PathVariable Long id){
 		
 		Actor actor = actorRepository.findOneById(id);

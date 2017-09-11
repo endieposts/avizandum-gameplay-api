@@ -2,6 +2,7 @@ package com.endie.avizandum.skillapi.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import com.endie.avizandum.skillapi.model.deserializers.AllowedActorsListDeserializer;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 
@@ -25,8 +26,8 @@ public class Skill {
 	private String name;
 	private Integer difficulty;
 	
-	//@JsonDeserialize(using = AllowedActorsListDeserializer.class)
 	@ManyToMany
+	@JsonManagedReference
 	private Collection<Actor> allowedActors;
 	
 	public Long getId() {
@@ -53,21 +54,12 @@ public class Skill {
 		this.difficulty = difficulty;
 	}
 
-	public Collection<Actor> getAllowedActors() {
-		ArrayList<Actor> noRecurseActors = new ArrayList<>();
-		Actor actorToAdd = new Actor();
-		
-		for(Actor actor : this.allowedActors) {
-			actorToAdd = actor;
-			actorToAdd.setAllowedSkills(null);
-			noRecurseActors.add(actorToAdd);
-		}
-		
-		return noRecurseActors;
-	}
-
 	public void setAllowedActors(Collection<Actor> allowedActors) {
 		this.allowedActors = allowedActors;
+	}
+
+	public Collection<Actor> getAllowedActors() {
+		return allowedActors;
 	}
 
 	public Skill() {

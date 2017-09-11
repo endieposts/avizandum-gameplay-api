@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="ACTORS")
 public class Actor {
@@ -22,6 +24,7 @@ public class Actor {
 	private String className;
 	
 	@ManyToMany(mappedBy = "allowedActors")
+	@JsonBackReference
 	private List<Skill> allowedSkills;
 	
 	public Long getId() {
@@ -48,16 +51,7 @@ public class Actor {
 	}
 
 	public Collection<Skill> getAllowedSkills() {
-		ArrayList<Skill> noRecurseSkills = new ArrayList<>();
-		Skill skillToAdd = new Skill();
-		
-		for(Skill skill : this.allowedSkills) {
-			skillToAdd = skill;
-			skillToAdd.setAllowedActors(null);
-			noRecurseSkills.add(skillToAdd);
-		}
-		
-		return noRecurseSkills;
+		return allowedSkills;
 	}
 	
 	public Actor() {
