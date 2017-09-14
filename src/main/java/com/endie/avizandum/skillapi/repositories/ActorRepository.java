@@ -13,6 +13,7 @@ import com.endie.avizandum.skillapi.model.Actor;
 public interface ActorRepository extends JpaRepository<Actor, Long> {
 	
 	List<Actor> findAll();
+	
 	Actor findOneById(@Param("id") Long id);
 }
 

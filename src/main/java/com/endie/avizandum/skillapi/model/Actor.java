@@ -22,6 +22,7 @@ public class Actor {
 	private Long id;
 	private String name;
 	private String className;
+	private String description;
 	
 	@ManyToMany(mappedBy = "allowedActors")
 	@JsonBackReference
@@ -58,4 +59,11 @@ public class Actor {
 		this.allowedSkills = new ArrayList<Skill>();
 	}
 	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

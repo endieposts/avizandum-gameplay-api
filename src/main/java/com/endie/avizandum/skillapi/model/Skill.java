@@ -25,6 +25,7 @@ public class Skill {
 	private Long id;
 	private String name;
 	private Integer difficulty;
+	private String description;
 	
 	@ManyToMany
 	@JsonManagedReference
@@ -65,4 +66,13 @@ public class Skill {
 	public Skill() {
 		this.allowedActors = new ArrayList<Actor>();
 	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 }
