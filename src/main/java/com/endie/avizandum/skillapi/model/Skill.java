@@ -51,8 +51,8 @@ public class Skill {
 		this.difficulty = difficulty;
 	}
 
-	public void setAllowedActorTypes(Collection<ActorType> allowedActors) {
-		this.allowedActorTypes = allowedActors;
+	public void setAllowedActorTypes(Collection<ActorType> allowedActorTypes) {
+		this.allowedActorTypes = allowedActorTypes;
 	}
 
 	public Collection<ActorType> getAllowedActorTypes() {

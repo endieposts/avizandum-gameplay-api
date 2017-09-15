@@ -23,7 +23,7 @@ public class TrainingEntry {
 	@JoinColumn(name="skill_id")
 	private Skill skill;
 	
-	private Integer order;
+	private Integer trainOrder;
 
 	public Long getId() {
 		return id;
@@ -49,12 +49,11 @@ public class TrainingEntry {
 		this.skill = skill;
 	}
 
-	public Integer getOrder() {
-		return order;
+	public Integer getTrainOrder() {
+		return trainOrder;
 	}
 
-	public void setOrder(Integer order) {
-		this.order = order;
+	public void setTrainOrder(Integer trainOrder) {
+		this.trainOrder = trainOrder;
 	}
-	
 }

@@ -16,6 +16,8 @@ public class Actor {
 	
 	private String name;
 
+	//TODO add an instance variable of actor type
+	
 	public Long getId() {
 		return id;
 	}

@@ -26,7 +26,7 @@ public class ActorType {
 	private String className;
 	private String description;
 	
-	@ManyToMany(mappedBy = "allowedActors")
+	@ManyToMany(mappedBy = "allowedActorTypes")
 	@JsonBackReference
 	private List<Skill> allowedSkills;
 	

@@ -1,5 +1,6 @@
 package com.endie.avizandum.skillapi.controller;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.endie.avizandum.skillapi.model.ActorType;
 import com.endie.avizandum.skillapi.model.Skill;
+import com.endie.avizandum.skillapi.model.TrainingEntry;
 import com.endie.avizandum.skillapi.repositories.ActorTypeRepository;
 import com.endie.avizandum.skillapi.repositories.SkillRepository;
 
@@ -53,5 +55,11 @@ public class SkillsController {
 		Skill skill = skillRepository.findOneById(skillId);
 		
 		return (List<ActorType>) skill.getAllowedActorTypes();
+	}
+	
+	@RequestMapping(value="/actor/{actorId}/traininglist", method = RequestMethod.GET)
+	public LinkedList<TrainingEntry> getTrainingListForActor(@PathVariable Long actorId){
+		return null;
+		
 	}
 }
