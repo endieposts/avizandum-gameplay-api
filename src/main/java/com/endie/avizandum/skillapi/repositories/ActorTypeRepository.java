@@ -8,12 +8,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.endie.avizandum.skillapi.model.Actor;
+import com.endie.avizandum.skillapi.model.ActorType;
 
 @Repository
-public interface ActorRepository extends JpaRepository<Actor, Long> {
+public interface ActorTypeRepository extends JpaRepository<ActorType, Long> {
 	
-	List<Actor> findAll();
+	List<ActorType> findAll();
 	
-	Actor findOneById(@Param("id") Long id);
+	ActorType findOneById(@Param("id") Long id);
 }
 

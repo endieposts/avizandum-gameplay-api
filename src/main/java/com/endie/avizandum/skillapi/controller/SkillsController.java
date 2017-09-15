@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.endie.avizandum.skillapi.model.Actor;
+import com.endie.avizandum.skillapi.model.ActorType;
 import com.endie.avizandum.skillapi.model.Skill;
-import com.endie.avizandum.skillapi.repositories.ActorRepository;
+import com.endie.avizandum.skillapi.repositories.ActorTypeRepository;
 import com.endie.avizandum.skillapi.repositories.SkillRepository;
 
 @RestController
@@ -20,7 +20,7 @@ public class SkillsController {
 	SkillRepository skillRepository;
 	
 	@Autowired
-	ActorRepository actorRepository;
+	ActorTypeRepository actorTypeRepository;
 
 	@RequestMapping(value="/all", method = RequestMethod.GET)
 	public List<Skill> getAllSkills(){
@@ -30,12 +30,12 @@ public class SkillsController {
 		return skills;
 	}
 
-	@RequestMapping(value="/actor/{actorId}", method = RequestMethod.GET)
-	public List<Skill> getAllSkillsByActor(@PathVariable Long actorId){
+	@RequestMapping(value="/actortype/{actorTypeId}", method = RequestMethod.GET)
+	public List<Skill> getAllSkillsByActorType(@PathVariable Long actorTypeId){
 		
-		Actor actor = actorRepository.findOneById(actorId);
+		ActorType actorType = actorTypeRepository.findOneById(actorTypeId);
 		
-		return (List<Skill>) actor.getAllowedSkills();
+		return (List<Skill>) actorType.getAllowedSkills();
 	}
 	
 	@RequestMapping(value="/{skillId}", method = RequestMethod.GET)
@@ -47,11 +47,11 @@ public class SkillsController {
 	}
 
 	
-	@RequestMapping(value="/actors/{skillId}", method = RequestMethod.GET)
-	public List<Actor> getActorsForSkill(@PathVariable Long skillId){
+	@RequestMapping(value="/actortypes/{skillId}", method = RequestMethod.GET)
+	public List<ActorType> getActorTypesForSkill(@PathVariable Long skillId){
 		
 		Skill skill = skillRepository.findOneById(skillId);
 		
-		return (List<Actor>) skill.getAllowedActors();
+		return (List<ActorType>) skill.getAllowedActorTypes();
 	}
 }
