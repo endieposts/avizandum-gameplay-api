@@ -6,7 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.endie.avizandum.skillapi.model.Actor;
 import com.endie.avizandum.skillapi.model.Skill;
 
 @Repository

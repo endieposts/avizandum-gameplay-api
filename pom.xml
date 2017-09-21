@@ -63,11 +63,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.endie.avizandum</groupId>
-			<artifactId>object-library</artifactId>
-			<version>1</version>
-		</dependency>
-		<dependency>
 	        <groupId>org.springframework.data</groupId>
 	        <artifactId>spring-data-rest-hal-browser</artifactId>
 	    </dependency>

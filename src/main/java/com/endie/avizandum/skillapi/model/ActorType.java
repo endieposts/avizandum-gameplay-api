@@ -2,7 +2,6 @@ package com.endie.avizandum.skillapi.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.Entity;
