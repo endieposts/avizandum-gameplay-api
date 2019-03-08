@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.endie.avizandum.skillapi.model.ActorType;
@@ -16,6 +16,7 @@ import com.endie.avizandum.skillapi.repositories.ActorTypeRepository;
 import com.endie.avizandum.skillapi.repositories.SkillRepository;
 
 @RestController
+@RequestMapping("skills")
 public class SkillsController {
 	
 	@Autowired
@@ -24,7 +25,7 @@ public class SkillsController {
 	@Autowired
 	ActorTypeRepository actorTypeRepository;
 
-	@RequestMapping(value="/all", method = RequestMethod.GET)
+	@GetMapping(value="/all", produces = "application/json")
 	public List<Skill> getAllSkills(){
 		
 		List<Skill> skills = skillRepository.findAll();
@@ -32,7 +33,7 @@ public class SkillsController {
 		return skills;
 	}
 
-	@RequestMapping(value="/actortype/{actorTypeId}", method = RequestMethod.GET)
+	@GetMapping(value="/actortype/{actorTypeId}", produces = "application/json")
 	public List<Skill> getAllSkillsByActorType(@PathVariable Long actorTypeId){
 		
 		ActorType actorType = actorTypeRepository.findOneById(actorTypeId);
@@ -40,16 +41,14 @@ public class SkillsController {
 		return (List<Skill>) actorType.getAllowedSkills();
 	}
 	
-	@RequestMapping(value="/{skillId}", method = RequestMethod.GET)
+	@GetMapping(value="/{skillId}", produces = "application/json")
 	public Skill getSkill(@PathVariable Long skillId){
 		
-		Skill skill = skillRepository.findOneById(skillId);
-		
-		return skill;
+		return skillRepository.findOneById(skillId);
 	}
 
 	
-	@RequestMapping(value="/actortypes/{skillId}", method = RequestMethod.GET)
+	@GetMapping(value="/actortypes/{skillId}", produces = "application/json")
 	public List<ActorType> getActorTypesForSkill(@PathVariable Long skillId){
 		
 		Skill skill = skillRepository.findOneById(skillId);
@@ -57,7 +56,7 @@ public class SkillsController {
 		return (List<ActorType>) skill.getAllowedActorTypes();
 	}
 	
-	@RequestMapping(value="/actor/{actorId}/traininglist", method = RequestMethod.GET)
+	@GetMapping(value="/actor/{actorId}/traininglist", produces = "application/json")
 	public LinkedList<TrainingEntry> getTrainingListForActor(@PathVariable Long actorId){
 		return null;
 		
