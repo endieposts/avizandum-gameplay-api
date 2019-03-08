@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AvizandumApiSkillApplication.class)
+@TestPropertySource(locations= "classpath:test.properties")
 
 public class AvizandumApiSkillApplicationTests {
 
