@@ -1,5 +1,6 @@
-package com.endie.avizandum;
+package com.endie.avizandum.skill.skillapi;
 
+import com.endie.avizandum.AvizandumApiSkillApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

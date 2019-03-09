@@ -1,4 +1,4 @@
-package com.endie.avizandum.skillapi.config;
+package com.endie.avizandum.skill.skillapi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

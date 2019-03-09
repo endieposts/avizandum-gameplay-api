@@ -1,4 +1,4 @@
-package com.endie.avizandum.skillapi.model;
+package com.endie.avizandum.skill.skillapi.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.endie.avizandum.skillapi.config;
+package com.endie.avizandum.skill.skillapi.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
