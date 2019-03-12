@@ -1,8 +1,8 @@
 package com.endie.avizandum.skill.skillapi.controller;
 
-import com.endie.avizandum.skill.skillapi.model.ActorType;
-import com.endie.avizandum.skill.skillapi.model.Skill;
-import com.endie.avizandum.skill.skillapi.model.TrainingEntry;
+import com.endie.avizandum.skill.skillapi.model.actor.ActorType;
+import com.endie.avizandum.skill.skillapi.model.skill.Skill;
+import com.endie.avizandum.skill.skillapi.model.skill.TrainingEntry;
 import com.endie.avizandum.skill.skillapi.repositories.ActorTypeRepository;
 import com.endie.avizandum.skill.skillapi.repositories.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;

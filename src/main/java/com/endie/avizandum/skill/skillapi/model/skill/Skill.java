@@ -1,4 +1,4 @@
-package com.endie.avizandum.skill.skillapi.model;
+package com.endie.avizandum.skill.skillapi.model.skill;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import com.endie.avizandum.skill.skillapi.model.actor.ActorType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
@@ -19,6 +23,9 @@ public class Skill {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+
+	@NotNull
+	@Size(max = 100)
 	private String name;
 	private Integer difficulty;
 	private String description;

@@ -1,4 +1,4 @@
-package com.endie.avizandum.skill.skillapi.model;
+package com.endie.avizandum.skill.skillapi.model.actor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,7 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import com.endie.avizandum.skill.skillapi.model.skill.Skill;
+import com.endie.avizandum.skill.skillapi.model.skill.TrainingEntry;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
@@ -21,6 +25,9 @@ public class ActorType {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+
+	@NotNull
+	@Size(max = 100)
 	private String name;
 	private String className;
 	private String description;
