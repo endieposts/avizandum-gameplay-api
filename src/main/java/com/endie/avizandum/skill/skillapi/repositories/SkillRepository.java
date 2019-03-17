@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.endie.avizandum.skill.skillapi.model.skill.Skill;
+import com.endie.avizandum.classlib.model.skill.Skill;
 
 @Repository
 public interface SkillRepository extends CrudRepository<Skill, Long> {

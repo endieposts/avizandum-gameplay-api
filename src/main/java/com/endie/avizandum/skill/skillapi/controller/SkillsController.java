@@ -1,16 +1,19 @@
 package com.endie.avizandum.skill.skillapi.controller;
 
-import com.endie.avizandum.skill.skillapi.model.actor.ActorType;
-import com.endie.avizandum.skill.skillapi.model.skill.Skill;
-import com.endie.avizandum.skill.skillapi.model.skill.TrainingEntry;
+import com.endie.avizandum.classlib.model.actor.ActorType;
+import com.endie.avizandum.classlib.model.skill.Skill;
+import com.endie.avizandum.classlib.model.skill.TrainingEntry;
 import com.endie.avizandum.skill.skillapi.repositories.ActorTypeRepository;
 import com.endie.avizandum.skill.skillapi.repositories.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,9 +28,17 @@ public class SkillsController {
     ActorTypeRepository actorTypeRepository;
 
     @GetMapping(value = "/all", produces = "application/json")
-    public List<Skill> getAllSkills() {
+    public ResponseEntity getAllSkills() {
 
         List<Skill> skills = skillRepository.findAll();
+
+        return new ResponseEntity(skills, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/all2", produces = "application/json")
+    public Collection<Skill> getAllSkills2() {
+
+        Collection<Skill> skills = skillRepository.findAll();
 
         return skills;
     }

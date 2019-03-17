@@ -1,6 +1,6 @@
 package com.endie.avizandum.skill.skillapi.repositories;
 
-import com.endie.avizandum.skill.skillapi.model.world.Location;
+import com.endie.avizandum.classlib.model.world.Location;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
